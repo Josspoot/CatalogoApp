@@ -20,4 +20,9 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.7"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CatalogoApp.Application\CatalogoApp.Application.csproj" />
+      <ProjectReference Include="..\CatalogoApp.Infrastructure\CatalogoApp.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

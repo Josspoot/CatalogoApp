@@ -887,6 +887,42 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "CatalogoApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CatalogoApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CatalogoApp.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CatalogoApp.Application.dll": {}
+        }
+      },
+      "CatalogoApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/CatalogoApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CatalogoApp.Domain.dll": {}
+        }
+      },
+      "CatalogoApp.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CatalogoApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CatalogoApp.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CatalogoApp.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2690,10 +2726,27 @@
         "system.composition.typedparts.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CatalogoApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../CatalogoApp.Application/CatalogoApp.Application.csproj",
+      "msbuildProject": "../CatalogoApp.Application/CatalogoApp.Application.csproj"
+    },
+    "CatalogoApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CatalogoApp.Domain/CatalogoApp.Domain.csproj",
+      "msbuildProject": "../CatalogoApp.Domain/CatalogoApp.Domain.csproj"
+    },
+    "CatalogoApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../CatalogoApp.Infrastructure/CatalogoApp.Infrastructure.csproj",
+      "msbuildProject": "../CatalogoApp.Infrastructure/CatalogoApp.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "CatalogoApp.Application >= 1.0.0",
+      "CatalogoApp.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 10.0.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 10.0.7",
       "Microsoft.AspNetCore.Identity.UI >= 10.0.7",
@@ -2726,7 +2779,14 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/CatalogoApp.Application.csproj": {
+              "projectPath": "/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/CatalogoApp.Application.csproj"
+            },
+            "/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Infrastructure/CatalogoApp.Infrastructure.csproj": {
+              "projectPath": "/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Infrastructure/CatalogoApp.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

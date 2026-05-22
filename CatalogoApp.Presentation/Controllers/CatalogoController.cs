@@ -1,7 +1,7 @@
 using CatalogoApp.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using CatalogoApp.Application.Services; // Necesario para ItemService
-using Microsoft.AspNetCore.Authorization; // Necesario para [Authorize]
+using CatalogoApp.Application.Services; 
+using Microsoft.AspNetCore.Authorization; 
 
 namespace Catalogo.Controllers
 {
@@ -9,7 +9,6 @@ namespace Catalogo.Controllers
     {
         private readonly ItemService _itemService;
 
-        // Inyectamos el servicio a través del constructor
         public CatalogoController(ItemService itemService)
         {
             _itemService = itemService;
@@ -17,7 +16,6 @@ namespace Catalogo.Controllers
 
         public IActionResult Index(string? genero)
         {
-            // Usamos el servicio para obtener los datos
             var resultado = string.IsNullOrEmpty(genero)
                 ? _itemService.ObtenerTodos()
                 : _itemService.ObtenerPorGenero(genero);
@@ -42,16 +40,12 @@ namespace Catalogo.Controllers
         [HttpPost]
         public IActionResult Agregar(Item item)
         {
-            // Llamamos al método Agregar del servicio, el cual invocará al repositorio para escribir en el JSON
             _itemService.Agregar(item);
-            
             return RedirectToAction("Index");
         }
 
-        // ---------- NUEVO MÉTODO AQUÍ ADENTRO DE LA CLASE ----------
-
         [HttpPost]
-        [Authorize] // Protege esta ruta, solo usuarios logueados pueden entrar
+        [Authorize] 
         public IActionResult AgregarComentario(int itemId, string texto, int estrellas)
         {
             var item = _itemService.ObtenerPorId(itemId);
@@ -64,39 +58,36 @@ namespace Catalogo.Controllers
                 Estrellas = estrellas
             };
 
-            // Asegurarse de que la lista esté inicializada (por precaución)
             if (item.Comentarios == null)
             {
                 item.Comentarios = new List<ComentarioItem>();
             }
 
             item.Comentarios.Add(nuevoComentario);
-        
-            // NOTA: Asegúrate de tener un método en tu ItemService/Repository para guardar los cambios en tu JSON.
-            // _itemService.Actualizar(item); 
+
+            // Guarda los cambios de forma persistente en el JSON
+            _itemService.Actualizar(item); 
 
             return RedirectToAction("Detalle", new { id = itemId });
         }
-        
+
         [HttpPost]
-        [Authorize] // Solo usuarios logueados pueden ejecutar esta acción
+        [Authorize] 
         public IActionResult ApoyarComentario(int itemId, string comentarioId)
         {
             var item = _itemService.ObtenerPorId(itemId);
             if (item == null) return NotFound();
 
-            // Buscamos el comentario específico dentro del juego usando su Id único
             var comentario = item.Comentarios?.FirstOrDefault(c => c.Id == comentarioId);
             if (comentario != null)
             {
                 comentario.Apoyos++;
         
-                // NOTA: Recuerda descomentar y usar tu método de persistencia si cuentas con él
-                // _itemService.Actualizar(item); 
+                // Guarda el nuevo contador de apoyos en el JSON
+                _itemService.Actualizar(item); 
             }
 
             return RedirectToAction("Detalle", new { id = itemId });
         }
     }
-    
 }

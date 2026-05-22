@@ -13,7 +13,6 @@ namespace CatalogoApp.Infrastructure.Repositories
             _filePath = filePath;
         }
 
-        // Método auxiliar que probablemente ya tienes para leer el JSON
         private List<Item> LeerTodos()
         {
             if (!File.Exists(_filePath)) return new List<Item>();
@@ -21,19 +20,14 @@ namespace CatalogoApp.Infrastructure.Repositories
             return JsonSerializer.Deserialize<List<Item>>(json) ?? new List<Item>();
         }
 
-        // Método auxiliar para guardar la lista completa en el JSON
         private void GuardarTodos(List<Item> items)
         {
             var json = JsonSerializer.Serialize(items, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(_filePath, json);
         }
 
-        public IEnumerable<Item> ObtenerTodos() => LeerTodos();
-
-        List<Item> IItemRepository.ObtenerTodos()
-        {
-            throw new NotImplementedException();
-        }
+        // CORRECCIÓN: Cambiado de IEnumerable a List para coincidir con la interfaz
+        public List<Item> ObtenerTodos() => LeerTodos();
 
         public Item? ObtenerPorId(int id) => LeerTodos().FirstOrDefault(i => i.Id == id);
 
@@ -50,18 +44,14 @@ namespace CatalogoApp.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        // ---------- COPIA ESTE NUEVO MÉTODO ----------
         public void Actualizar(Item itemModificado)
         {
             var items = LeerTodos();
-            // Buscamos la posición del juego en el archivo JSON
             var index = items.FindIndex(i => i.Id == itemModificado.Id);
             
             if (index != -1)
             {
-                // Reemplazamos el juego viejo por el modificado (con sus nuevos comentarios)
                 items[index] = itemModificado;
-                // Guardamos la lista actualizada en el archivo items.json
                 GuardarTodos(items);
             }
         }

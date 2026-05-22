@@ -1,0 +1,12 @@
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/bin/Debug/net10.0/CatalogoApp.Domain.deps.json
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/bin/Debug/net10.0/CatalogoApp.Domain.dll
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/bin/Debug/net10.0/CatalogoApp.Domain.pdb
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/CatalogoApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/CatalogoApp.Domain.AssemblyInfoInputs.cache
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/CatalogoApp.Domain.AssemblyInfo.cs
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/CatalogoApp.Domain.csproj.CoreCompileInputs.cache
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/CatalogoApp.Domain.sourcelink.json
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/CatalogoApp.Domain.dll
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/refint/CatalogoApp.Domain.dll
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/CatalogoApp.Domain.pdb
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Domain/obj/Debug/net10.0/ref/CatalogoApp.Domain.dll

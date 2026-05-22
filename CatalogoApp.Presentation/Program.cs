@@ -68,4 +68,24 @@ app.MapControllerRoute(
 // 4. Mapear las páginas Razor (Requerido para que funcionen las rutas como /Account/Login que están en _LoginPartial.cshtml)
 app.MapRazorPages();
 
+app.MapRazorPages();
+
+// ---------- CÓDIGO PARA AUTOMATIZAR LA BASE DE DATOS ----------
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        context.Database.Migrate(); // Crea la base de datos y las tablas de login automáticamente
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Error al crear o migrar la base de datos.");
+    }
+}
+
+
+
 app.Run();

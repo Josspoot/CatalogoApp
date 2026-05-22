@@ -1,0 +1,16 @@
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/bin/Debug/net10.0/CatalogoApp.Application.deps.json
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/bin/Debug/net10.0/CatalogoApp.Application.dll
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/bin/Debug/net10.0/CatalogoApp.Application.pdb
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/bin/Debug/net10.0/CatalogoApp.Domain.dll
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/bin/Debug/net10.0/CatalogoApp.Domain.pdb
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.csproj.AssemblyReference.cache
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.AssemblyInfoInputs.cache
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.AssemblyInfo.cs
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.csproj.CoreCompileInputs.cache
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.sourcelink.json
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/Catalogo.3C6EFD6F.Up2Date
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.dll
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/refint/CatalogoApp.Application.dll
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/CatalogoApp.Application.pdb
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Application/obj/Debug/net10.0/ref/CatalogoApp.Application.dll

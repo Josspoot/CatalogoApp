@@ -1,11 +1,66 @@
 @model CatalogoApp.Domain.Models.Item
- 
+
 <h1>@Model.Titulo</h1>
- 
 <p><strong>Género:</strong> @Model.Genero</p>
 <p><strong>Consola:</strong> @Model.Consola</p>
 <p><strong>Año:</strong> @Model.Ano</p>
 <p><strong>Descripción:</strong> @Model.Descripcion</p>
- 
+
 <hr />
-<a asp-action="Index">&larr; Volver al catálogo</a>
+
+<h3>Comentarios y Calificaciones</h3>
+
+@if (Model.Comentarios != null && Model.Comentarios.Any())
+{
+    <ul class="list-group mb-4">
+        @foreach (var comentario in Model.Comentarios)
+        {
+            <li class="list-group-item">
+                <strong>@comentario.Usuario</strong> - @comentario.Fecha.ToShortDateString() <br />
+                <span>Calificación: @comentario.Estrellas / 5 ⭐</span> <br />
+                <p>@comentario.Texto</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No hay comentarios aún. ¡Sé el primero!</p>
+}
+
+@if (User.Identity != null && User.Identity.IsAuthenticated)
+{
+    <div class="card p-3 mt-3">
+        <h4>Deja tu reseña</h4>
+        <form asp-action="AgregarComentario" method="post">
+            <input type="hidden" name="itemId" value="@Model.Id" />
+            
+            <div class="mb-3">
+                <label class="form-label">Calificación (Estrellas)</label>
+                <select name="estrellas" class="form-control" required>
+                    <option value="5">5 - Excelente</option>
+                    <option value="4">4 - Muy Bueno</option>
+                    <option value="3">3 - Bueno</option>
+                    <option value="2">2 - Regular</option>
+                    <option value="1">1 - Malo</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Comentario</label>
+                <textarea name="texto" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning mt-3">
+        Debes <a href="/Identity/Account/Login">iniciar sesión</a> para dejar un comentario y calificar.
+    </div>
+}
+
+<br />
+<a asp-action="Index" class="btn btn-secondary">&larr; Volver al catálogo</a>

@@ -12,55 +12,87 @@
 
 @if (Model.Comentarios != null && Model.Comentarios.Any())
 {
-    <ul class="list-group mb-4">
+    <div class="list-group mb-4">
         @foreach (var comentario in Model.Comentarios)
         {
-            <li class="list-group-item">
-                <strong>@comentario.Usuario</strong> - @comentario.Fecha.ToShortDateString() <br />
-                <span>Calificación: @comentario.Estrellas / 5 ⭐</span> <br />
-                <p>@comentario.Texto</p>
-            </li>
+            <div class="list-group-item mb-2 shadow-sm p-3 bg-white rounded">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-primary"><strong>@comentario.Usuario</strong></h5>
+                    <small class="text-muted">@comentario.Fecha.ToShortDateString()</small>
+                </div>
+                
+                <div class="mb-2">
+                    @for (int i = 0; i < comentario.Estrellas; i++)
+                    {
+                        <span class="text-warning" style="font-size: 1.2rem;">⭐</span>
+                    }
+                    <span class="text-muted small ms-1">(@comentario.Estrellas / 5)</span>
+                </div>
+
+                <p class="mb-2 text-dark">@comentario.Texto</p>
+
+                <div class="d-flex align-items-center mt-2">
+                    <span class="badge bg-secondary me-2 p-2">
+                        👍 @comentario.Apoyos @(comentario.Apoyos == 1 ? "apoyo" : "apoyos")
+                    </span>
+
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <form asp-action="ApoyarComentario" method="post" style="display:inline;">
+                            <input type="hidden" name="itemId" value="@Model.Id" />
+                            <input type="hidden" name="comentarioId" value="@comentario.Id" />
+                            <button type="submit" class="btn btn-sm btn-outline-primary py-1 px-2">
+                                Apoyar
+                            </button>
+                        </form>
+                    }
+                </div>
+            </div>
         }
-    </ul>
+    </div>
 }
 else
 {
-    <p>No hay comentarios aún. ¡Sé el primero!</p>
+    <p class="text-muted">No hay comentarios aún. ¡Sé el primero en dejar uno!</p>
 }
+
+<hr />
 
 @if (User.Identity != null && User.Identity.IsAuthenticated)
 {
-    <div class="card p-3 mt-3">
-        <h4>Deja tu reseña</h4>
+    <div class="card p-4 mt-3 shadow-sm bg-light">
+        <h4 class="mb-3 text-secondary">Deja tu reseña</h4>
         <form asp-action="AgregarComentario" method="post">
             <input type="hidden" name="itemId" value="@Model.Id" />
             
             <div class="mb-3">
-                <label class="form-label">Calificación (Estrellas)</label>
-                <select name="estrellas" class="form-control" required>
-                    <option value="5">5 - Excelente</option>
-                    <option value="4">4 - Muy Bueno</option>
-                    <option value="3">3 - Bueno</option>
-                    <option value="2">2 - Regular</option>
-                    <option value="1">1 - Malo</option>
+                <label class="form-label font-weight-bold">Calificación (Estrellas)</label>
+                <select name="estrellas" class="form-select" required>
+                    <option value="5">⭐⭐⭐⭐⭐ (5 - Excelente)</option>
+                    <option value="4">⭐⭐⭐⭐ (4 - Muy Bueno)</option>
+                    <option value="3">⭐⭐⭐ (3 - Bueno)</option>
+                    <option value="2">⭐⭐ (2 - Regular)</option>
+                    <option value="1">⭐ (1 - Malo)</option>
                 </select>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Comentario</label>
-                <textarea name="texto" class="form-control" rows="3" required></textarea>
+                <label class="form-label font-weight-bold">Comentario</label>
+                <textarea name="texto" class="form-control" rows="3" placeholder="Escribe tu opinión sobre el juego..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+            <button type="submit" class="btn btn-success px-4">Enviar Comentario</button>
         </form>
     </div>
 }
 else
 {
-    <div class="alert alert-warning mt-3">
-        Debes <a href="/Identity/Account/Login">iniciar sesión</a> para dejar un comentario y calificar.
+    <div class="alert alert-warning mt-3 border-0 shadow-sm">
+        Para enviar un comentario o apoyar las opiniones de otros jugadores, necesitas 
+        <a href="/Identity/Account/Login" class="alert-link">iniciar sesión</a> o 
+        <a href="/Identity/Account/Register" class="alert-link">registrarte</a>.
     </div>
 }
 
 <br />
-<a asp-action="Index" class="btn btn-secondary">&larr; Volver al catálogo</a>
+<a asp-action="Index" class="btn btn-secondary mt-2">&larr; Volver al catálogo</a>

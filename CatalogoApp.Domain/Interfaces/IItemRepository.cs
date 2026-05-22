@@ -8,5 +8,6 @@ namespace CatalogoApp.Domain.Interfaces
         Item? ObtenerPorId(int id);
         void Agregar(Item item);
         void Eliminar(int id);
+        void Actualizar(Item item);
     }
 }

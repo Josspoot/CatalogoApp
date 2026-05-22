@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CatalogoApp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9883b558180efec410663aa03a92c6647276480b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a314be309951d93f97b48c3c1e5b33f809dcb8a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CatalogoApp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CatalogoApp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

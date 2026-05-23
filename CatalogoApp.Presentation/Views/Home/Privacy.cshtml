@@ -1,6 +1,52 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Protocolo de Seguridad";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container my-5 font-rajdhani">
+    <div class="card p-5 shadow-lg bg-dark border-secondary">
+        <h1 class="font-orbitron text-uppercase mb-4" style="color: var(--accent-secondary); text-shadow: 0 0 15px rgba(0, 242, 254, 0.4);">
+            Directiva de Cifrado y Privacidad - Game'sc
+        </h1>
+        <p class="lead text-muted mb-4">
+            Última actualización de la matriz de datos de seguridad: Registro Estelar 2026.
+        </p>
+
+        <div class="accordion" id="privacyAccordion">
+            
+            <div class="card bg-transparent border-0 mb-3">
+                <h4 class="font-orbitron text-primary mb-2">1. Recolección de Datos de Jugador</h4>
+                <p class="text-light">
+                    Al interactuar con la interfaz de <strong>Game'sc</strong>, nuestro sistema almacena de manera segura tus credenciales de acceso local cifradas bajo tecnología SQLite encriptada. Recopilamos información sobre tus reseñas de videojuegos, asignaciones de estrellas y los apoyos interactivos emitidos hacia otros miembros de la comunidad con el único fin de generar métricas de valoración confiables.
+                </p>
+            </div>
+
+            <div class="card bg-transparent border-0 mb-3">
+                <h4 class="font-orbitron text-primary mb-2">2. Uso de Identificadores Únicos</h4>
+                <p class="text-light">
+                    Cada vez que publicas una opinión o apoyas una crítica, el sistema genera de forma automática un token alfanumérico global único conocido como GUID. Este mecanismo evita la duplicidad de acciones maliciosas, protege tu identidad detrás de tu alias de usuario elegido y asegura que la persistencia en nuestros ficheros JSON mantenga la integridad absoluta de la base de datos.
+                </p>
+            </div>
+
+            <div class="card bg-transparent border-0 mb-3">
+                <h4 class="font-orbitron text-primary mb-2">3. Cookies y Almacenamiento Local</h4>
+                <p class="text-light">
+                    Utilizamos cookies técnicas esenciales y estados de sesión del servidor para identificar si tu perfil se encuentra logueado en la aplicación. Si tu sesión no es detectada, el sistema restringirá de forma inteligente los privilegios de escritura en las vistas detalladas, garantizando un entorno libre de spam o reseñas fraudulentas hechas por bots externos.
+                </p>
+            </div>
+
+            <div class="card bg-transparent border-0 mb-3">
+                <h4 class="font-orbitron text-primary mb-2">4. Derechos del Propietario de la Cuenta</h4>
+                <p class="text-light">
+                    Tienes el derecho absoluto de auditar, modificar o solicitar la purga completa de tus registros de comentarios dentro de nuestro archivo maestro <code>items.json</code>. Para iniciar un protocolo de eliminación de huella digital, contacta con los administradores de red del sistema central de Game'sc.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="mt-4 pt-3 border-top border-secondary text-center">
+            <p class="text-muted small m-0">
+                Al usar la plataforma Game'sc, aceptas los términos del protocolo de sincronización de datos de videojuegos.
+            </p>
+        </div>
+    </div>
+</div>

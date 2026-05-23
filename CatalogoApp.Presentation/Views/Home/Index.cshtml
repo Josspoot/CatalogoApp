@@ -1,8 +1,123 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Central de Comando";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container my-4 font-rajdhani">
+    
+    <div class="p-5 mb-5 rounded-4 position-relative overflow-hidden text-center shadow-lg" 
+         style="background: linear-gradient(135deg, rgba(17, 22, 34, 0.95), rgba(138, 43, 226, 0.2)); border: 1px solid rgba(0, 242, 254, 0.2);">
+        
+        <div class="py-3">
+            <h1 class="display-4 fw-black font-orbitron text-uppercase tracking-wider mb-2" style="color: #ffffff; text-shadow: 0 0 25px rgba(138, 43, 226, 0.8);">
+                BIENVENIDO A GAME'SC
+            </h1>
+            <p class="fs-4 text-secondary max-w-2xl mx-auto mb-4">
+                La red neural definitiva para el análisis, registro y calificación de la industria interactiva global. Tu portal central de telemetría de videojuegos.
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-2">
+                <a asp-controller="Catalogo" asp-action="Index" class="btn btn-primary btn-lg px-5 gap-3 font-orbitron">
+                    INGRESAR AL CATÁLOGO
+                </a>
+                @if (User.Identity == null || !User.Identity.IsAuthenticated)
+                {
+                    <a href="/Identity/Account/Register" class="btn btn-success btn-lg px-5 font-orbitron">
+                        CREAR PERFIL DE JUGADOR
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5 text-center font-orbitron">
+        <div class="col-md-4">
+            <div class="card bg-light-panel p-4 border border-secondary">
+                <h3 class="text-info fw-bold m-0" style="font-size: 2.5rem; text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);">+12,400</h3>
+                <span class="text-muted small tracking-widest d-block mt-1">TÍTULOS INDEXADOS</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light-panel p-4 border border-secondary">
+                <h3 class="text-primary fw-bold m-0" style="font-size: 2.5rem; text-shadow: 0 0 10px rgba(138, 43, 226, 0.4); color: var(--accent-primary) !important;">89.4k</h3>
+                <span class="text-muted small tracking-widest d-block mt-1">RESEÑAS VERIFICADAS</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light-panel p-4 border border-secondary">
+                <h3 class="text-success fw-bold m-0" style="font-size: 2.5rem; text-shadow: 0 0 10px rgba(57, 255, 20, 0.4);">99.9%</h3>
+                <span class="text-muted small tracking-widest d-block mt-1">ESTABILIDAD DEL SERVIDOR</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-12">
+            <h2 class="font-orbitron text-uppercase mb-4" style="color: var(--accent-secondary); letter-spacing: 1px;">
+                Módulos Activos de la Plataforma
+            </h2>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 p-4">
+                <div class="card-body p-0">
+                    <h4 class="font-orbitron text-white mb-3">📂 Catálogo Centralizado</h4>
+                    <p class="text-secondary fs-5">
+                        Explora una base de datos distribuida y categorizada por zonas de desarrollo y géneros. Encuentra especificaciones técnicas de lanzamientos de consolas clásicas y de nueva generación.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 p-4">
+                <div class="card-body p-0">
+                    <h4 class="font-orbitron text-white mb-3">⭐ Crítica Cuántica</h4>
+                    <p class="text-secondary fs-5">
+                        Nuestro algoritmo de votación por estrellas permite a los usuarios autenticados mitigar el ruido estadístico y dejar comentarios directos sobre la jugabilidad, narrativa e innovación técnica.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+            <div class="card h-100 p-4">
+                <div class="card-body p-0">
+                    <h4 class="font-orbitron text-white mb-3">🤝 Respaldo Comunitario</h4>
+                    <p class="text-secondary fs-5">
+                        ¿Estás de acuerdo con el análisis de otro jugador? Utiliza el protocolo "Apoyar" para elevar las opiniones más fundamentadas a la cima de los registros de persistencia global de datos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-4 shadow-lg bg-dark border border-secondary mb-5">
+        <h3 class="font-orbitron text-white text-uppercase mb-4 border-bottom border-secondary pb-2">
+            📡 Transmisiones de Red Recientes
+        </h3>
+        
+        <div class="mb-3 border-bottom border-secondary pb-3 rgba-hover-effect">
+            <span class="badge bg-info mb-2 font-orbitron">ACTUALIZACIÓN DE SISTEMA</span>
+            <h5 class="text-white font-orbitron mb-1">Cifrado de Base de Datos SQLite Completado</h5>
+            <p class="text-muted m-0 fs-5">
+                La migración automática de perfiles se ha desplegado de manera óptima en el servidor local de desarrollo. Los flujos de autenticación ahora se encuentran blindados mediante cookies de sesión persistente.
+            </p>
+        </div>
+
+        <div class="mb-3 border-bottom border-secondary pb-3">
+            <span class="badge bg-info mb-2 font-orbitron">COMUNIDAD</span>
+            <h5 class="text-white font-orbitron mb-1">Métricas de Reseñas JSON Optimizadas</h5>
+            <p class="text-muted m-0 fs-5">
+                Hemos reestructurado el guardado dinámico en los ficheros JSON integrando tecnologías GUID únicos por comentario para mejorar la latencia al actualizar los apoyos dinámicos en tiempo de ejecución.
+            </p>
+        </div>
+        
+        <div class="mb-0">
+            <span class="badge bg-info mb-2 font-orbitron">LIGA DE JUGADORES</span>
+            <h5 class="text-white font-orbitron mb-1">Apertura del Registro para Nuevos Inspectores</h5>
+            <p class="text-muted m-0 fs-5">
+                La plataforma abre oficialmente sus solicitudes de registro. Todos aquellos usuarios con credenciales activas obtienen permisos inmediatos para interactuar e incidir en los puntajes globales de software interactivo.
+            </p>
+        </div>
+    </div>
+
 </div>

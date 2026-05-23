@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "Titulo": "pepe",
+    "Genero": "pepe",
+    "Consola": "pepe",
+    "Ano": 2022,
+    "Descripcion": "pepe",
+    "Comentarios": [
+      {
+        "Id": "7e47b3d6-3d59-4b7c-a7cd-ec5b3018377f",
+        "Usuario": "josue@gmail.com",
+        "Texto": "bastante meh la verdad ",
+        "Estrellas": 3,
+        "Fecha": "2026-05-22T11:24:23.909996-06:00",
+        "Apoyos": 13
+      }
+    ]
+  }
+]

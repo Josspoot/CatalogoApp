@@ -211,7 +211,6 @@
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/nezrqnk58p-{0}-muycvpuwrr-muycvpuwrr.gz
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
-/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/5pxon9i2hd-{0}-lugek5hnai-lugek5hnai.gz
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/ve0oc86usb-{0}-61n19gt1b8-61n19gt1b8.gz
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/l5x10b9972-{0}-fr7q2aak1r-fr7q2aak1r.gz
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/gg06c6q6lw-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -288,3 +287,4 @@
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/ref/CatalogoApp.Presentation.dll
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/bin/Debug/net10.0/Data/item.json
 /Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/bin/Debug/net10.0/Data/items.json
+/Users/Joss/RiderProjects/CatalogoApp/CatalogoApp.Presentation/obj/Debug/net10.0/compressed/5pxon9i2hd-{0}-yzxmgkqmpo-yzxmgkqmpo.gz

@@ -1,31 +1,379 @@
+/* ==========================================================================
+   TIPOGRAFÍAS Y CONFIGURACIÓN GLOBAL (GAMING HUB AESTHETIC)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --bg-main: #080b11;
+  --bg-surface: #111622;
+  --bg-surface-elevated: #1a2032;
+  --accent-primary: #8a2be2;       /* Neón Violeta */
+  --accent-secondary: #00f2fe;     /* Neón Cyan */
+  --accent-success: #39ff14;       /* Neón Verde */
+  --accent-gold: #ffb800;          /* Oro estrella radiante */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --cyber-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  --glass-glow: rgba(255, 255, 255, 0.03);
+}
+
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
+  font-size: 16px;
   position: relative;
   min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: var(--bg-main);
+  background-image:
+          radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 40%),
+          radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.06) 0%, transparent 40%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  margin-bottom: 80px;
+  letter-spacing: 0.5px;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* Barra de desplazamiento personalizada (Scrollbar Gamer) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent-primary), var(--accent-secondary));
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN (CYBER-HEADER)
+   ========================================================================== */
+.navbar {
+  background: rgba(17, 22, 34, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(138, 43, 226, 0.1);
+  padding: 0.8rem 2rem;
+}
+
+.navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  background: var(--cyber-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+.nav-link {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary) !important;
+  padding: 0.5rem 1.2rem !important;
+  margin: 0 0.2rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--cyber-gradient);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px var(--accent-secondary);
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* ==========================================================================
+   TARJETAS DEL CATÁLOGO (CONSOLA INTERACTIVA GRID)
+   ========================================================================== */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Efecto de borde iluminado al pasar el cursor */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 16px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 242, 254, 0.15);
+  background: var(--bg-surface-elevated);
+}
+
+.card:hover::before {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.card-body {
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(8,11,17,0.9) 0%, transparent 100%);
+}
+
+.card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+/* Badges / Etiquetas de Consola o Género */
+.badge {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.bg-info {
+  background-color: rgba(0, 242, 254, 0.15) !important;
+  color: var(--accent-secondary) !important;
+  border: 1px solid rgba(0, 242, 254, 0.4);
+}
+
+/* ==========================================================================
+   SISTEMA DE BOTONES (HIGH-TECH INTERFACE)
+   ========================================================================== */
+.btn {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--cyber-gradient);
+  border: none;
+  color: #000000 !important; /* Estilo de alto contraste cyber */
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+  color: #ffffff !important;
+}
+
+.btn-success {
+  background: transparent;
+  color: var(--accent-success) !important;
+  border: 2px solid var(--accent-success);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
+}
+
+.btn-success:hover {
+  background: var(--accent-success);
+  color: #000000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   SECCIÓN DE COMENTARIOS Y RESEÑAS DE USUARIOS
+   ========================================================================== */
+.list-group-item.shadow-sm {
+  background: linear-gradient(145deg, rgba(26, 32, 50, 0.8), rgba(17, 22, 34, 0.9));
+  border-left: 4px solid var(--accent-primary) !important;
+  border-top: 1px solid rgba(255,255,255,0.05) !important;
+  border-right: 1px solid rgba(255,255,255,0.05) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1rem;
+}
+
+/* Animación de pulso estelar en las estrellas */
+.text-warning {
+  color: var(--accent-gold) !important;
+  text-shadow: 0 0 12px rgba(2ff, 184, 0, 0.6);
+  font-size: 1.3rem;
+  animation: starGlow 3s infinite ease-in-out;
+}
+
+@keyframes starGlow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 184, 0, 0.4)); }
+  50% { filter: drop-shadow(0 0 8px rgba(255, 184, 0, 0.9)); }
+}
+
+/* Contador de Apoyos (Votos) */
+.badge.bg-secondary {
+  background: rgba(138, 43, 226, 0.1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  font-size: 0.85rem;
+}
+
+.btn-outline-primary {
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: rgba(0, 242, 254, 0.1);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+}
+
+/* ==========================================================================
+   FORMULARIOS Y PANELES DE ENTRADA (CYBERPUNK INPUTS)
+   ========================================================================== */
+.card.bg-light, .card.bg-light-panel {
+  background: var(--bg-surface) !important;
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.form-control, .form-select {
+  background-color: rgba(8, 11, 17, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary) !important;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: #4b5563;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.15), inset 0 0 8px rgba(0, 242, 254, 0.1);
+  background-color: var(--bg-main) !important;
+}
+
+.form-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-secondary);
+  margin-bottom: 0.6rem;
+}
+
+/* Dropdown de opciones en el Selector de Estrellas */
+option {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   MENSÁJES DE ALERTA E INFORMACIÓN PROTEGIDA
+   ========================================================================== */
+.alert-warning {
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.05), rgba(255, 184, 0, 0.15));
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  color: #ffd000;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.alert-link {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   FOOTER (PIE DE PÁGINA)
+   ========================================================================== */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 60px;
+  background-color: rgba(11, 16, 26, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   AJUSTE DE CONTRASTE PARA COMENTARIOS
+   ========================================================================== */
+.list-group-item,
+.list-group-item p,
+.list-group-item .text-dark {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.list-group-item small.text-muted {
+  color: var(--text-secondary) !important;
+  font-weight: 600;
+  letter-spacing: 1px;
 }

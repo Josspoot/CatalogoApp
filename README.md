@@ -10,6 +10,19 @@
 ## Descripción del Proyecto
 CatalogoApp es una aplicación web desarrollada con .NET y C#. El proyecto implementa un sistema de catálogo estructurado bajo los principios de Arquitectura Limpia (Clean Architecture), separando las responsabilidades en distintas capas para facilitar su mantenimiento y escalabilidad.
 
+## Capturas de pantalla
+<img width="1440" height="808" alt="image" src="https://github.com/user-attachments/assets/74e35bd9-5f84-415d-9a2a-f3e8aacac8b5" />
+<img width="1440" height="812" alt="image" src="https://github.com/user-attachments/assets/0810b6d4-0704-45f4-b1ce-3a7a1c4230fa" />
+<img width="1436" height="804" alt="image" src="https://github.com/user-attachments/assets/4d569182-6bc1-49db-ab1d-edc1fdb635e7" />
+<img width="1440" height="811" alt="image" src="https://github.com/user-attachments/assets/74e783f4-90bc-4fec-93b0-fab9e5cc8aef" />
+<img width="1440" height="812" alt="image" src="https://github.com/user-attachments/assets/355bf6d3-41c0-4fef-ad09-b6018f007b9f" />
+
+## En caso de no estar Login
+
+<img width="1440" height="811" alt="image" src="https://github.com/user-attachments/assets/4fb411ef-6dd2-48d7-8c91-73aeb58a959c" />
+
+
+
 ## Estructura de la Solución
 La arquitectura del proyecto está compuesta por las siguientes capas principales:
 
